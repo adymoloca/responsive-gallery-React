@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { ImageBox } from './components/image-box.component';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      images: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://picsum.photos/v2/list')
+      .then(response => response.json())
+      .then(image => this.setState({images: image}))
+      .catch(err => console.log(err));
+  }
+
+  render() {
+    return ( 
+      <div>
+        <ImageBox images={this.state.images}/>
+      </div>
+    );
+  }
 }
 
 export default App;

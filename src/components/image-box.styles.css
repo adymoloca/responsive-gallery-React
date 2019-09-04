@@ -1,0 +1,12 @@
+/* Create four equal columns that sits next to each other */
+.column {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column img {
+    padding: 5px;
+    vertical-align: middle;
+    width: 250px;
+    height: 250px;
+}
