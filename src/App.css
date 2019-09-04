@@ -7,3 +7,7 @@ body {
   background-color: lightslategrey;
 }
 
+h1 {
+  text-align: center;
+  padding: 20px;
+}
