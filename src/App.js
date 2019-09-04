@@ -22,6 +22,7 @@ class App extends Component {
   render() {
     return ( 
       <div>
+        <h1>Resize the browser window to see the responsive effect.</h1>
         <ImageBox images={this.state.images}/>
       </div>
     );
